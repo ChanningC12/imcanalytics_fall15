@@ -6,7 +6,7 @@ $con=mysqli_connect("db536766613.db.1and1.com","dbo536766613","IMCsql!s05","db53
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 } 
-
+//Qifeng!!!
 ?>
 
 <head>
