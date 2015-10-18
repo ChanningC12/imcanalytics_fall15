@@ -17,7 +17,7 @@ th,td {
 </style>
 </head>
 <body>
-
+<!--New Comment-->
 <strong>BASIC SQL SELECT EXAMPLE - CUSTOMERS (Table):</strong>
 <p>
 
