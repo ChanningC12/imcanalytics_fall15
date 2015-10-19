@@ -386,7 +386,9 @@ function post(path, params, method) {
 	<strong><?php echo $BOOKTITLE2 ?></strong><p>
 	by <?php echo $BOOKAUTH2 ?> <p>
 	<p>
-	<?php { ?>
+	<?php if($LATEST != 0){ ?>
+	<input type="button" value="Purchase" id="book2button" $(this).DeetsBox(2);">
+	<?php } else { ?>
 	<input type="button" value="Learn More" id="book2button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book2').value);$(this).DeetsBox(2)";>
 	<?php } ?>
 	</div>
