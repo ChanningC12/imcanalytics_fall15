@@ -380,12 +380,15 @@ function post(path, params, method) {
 
  <div id="two" style="padding:10px;">
 	<?php echo $BOOKID2; ?>
-	<img src="img/" style="float:left; margin-right:6px; height: 100px;">
-    <input type="hidden" id="book2" value="">
-	<strong></strong><p>
-	by <p>
+	<img src="img/<?php echo $BOOKPIC2 ?>" style="float:left; margin-right:6px; height: 100px;">
+    <input type="hidden" id="book2" value="<?php echo $BOOKTITLE2 ?>">
+    <input type="hidden" id="book2price" value="<?php echo $BOOKPRICE2 ?>">
+	<strong><?php echo $BOOKTITLE1 ?></strong><p>
+	by <?php echo $BOOKAUTH2 ?> <p>
 	<p>
-	<input type="button" value="Learn More" id="book2button" onClick="$(this).DeetsBox(2)";>
+	<?php if($LATEST != 0){ ?>
+	<input type="button" value="Learn More" id="book2button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book2').value);$(this).DeetsBox(2)";>
+	<?php } ?>
 	</div>
 	
  <div id="three" style="padding:10px;">
