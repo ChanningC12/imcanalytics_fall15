@@ -187,6 +187,7 @@ if (mysqli_connect_errno()) {
    $.fn.DeetsBox = function(bid) {
         if(bid == '1'){	
 	//MIDTERM ADDITIONS - NEW VARIABLES AND CONDITIONS
+	//Student Comment: Make book2, book3, book4 dynamic
 		var bookname = $( "#book1" ).val();
 		var bookprice = $( "#book1price" ).val();
 		$("#showbookdeets").html(bookname + "<p>" + bookprice); 
@@ -197,18 +198,36 @@ if (mysqli_connect_errno()) {
 		 $("#deetcta").text('Purchase'); }
 		}
 		else if(bid == '2'){
-		$("#showbookdeets").html("Vacuum<p>$9.99"); 
+		var bookname = $( "#book2" ).val();
+		var bookprice = $( "#book2price" ).val();	
+		$("#showbookdeets").html(bookname + "<p>" + bookprice); 
 		$("#bookshelf").val('2'); 
+		 var fromcart = $( "#iscart" ).val();
+		 if(fromcart != 0){
+		 
+		 $("#deetcta").text('Purchase'); }
 		}
 			else if(bid == '3'){
-		$("#showbookdeets").html("Teeth<p>$14.99"); 
+		var bookname = $( "#book3" ).val();
+		var bookprice = $( "#book3price" ).val();	
+		$("#showbookdeets").html(bookname + "<p>" + bookprice); 
 		$("#bookshelf").val('3'); 
+		 var fromcart = $( "#iscart" ).val();
+		 if(fromcart != 0){
+		 
+		 $("#deetcta").text('Purchase'); }
 		}
 			else if(bid == '4'){
-		$("#showbookdeets").html("August<p>$12.99"); 
+		var bookname = $( "#book4" ).val();
+		var bookprice = $( "#book4price" ).val();	
+		$("#showbookdeets").html(bookname + "<p>" + bookprice); 
 		$("#bookshelf").val('4'); 
 		}
 		$('#bookdeets').popup('show');
+		 var fromcart = $( "#iscart" ).val();
+		 if(fromcart != 0){
+		 
+		 $("#deetcta").text('Purchase'); }
     };
 	
 
