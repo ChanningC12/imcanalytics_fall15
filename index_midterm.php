@@ -376,7 +376,7 @@ function post(path, params, method) {
 	<input type="button" value="Learn More" id="book1button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book1').value); $(this).DeetsBox(1);">
 	<?php } ?>
 	</div>
-	
+
 
  <div id="two" style="padding:10px;">
 	<?php echo $BOOK2; ?>
@@ -389,32 +389,42 @@ function post(path, params, method) {
 	<?php if($LATEST != 0){ ?>
 	<input type="button" value="Purchase" id="book2button" $(this).DeetsBox(2);">
 	<?php } else { ?>
-	<input type="button" value="Learn More" id="book2button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book2').value);$(this).DeetsBox(2)";>
+	<input type="button" value="Learn More" id="book2button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book2').value); $(this).DeetsBox(2)";>
 	<?php } ?>
 	</div>
 	
  <div id="three" style="padding:10px;">
-	<?php echo $BOOKID3; ?>
-	<img src="img/" style="float:left; margin-right:6px; height: 100px;">
-    <input type="hidden" id="book3" value="">
-	<strong></strong><p>
-	by <p>
+	<?php echo $BOOK3; ?>
+	<img src="img/<?php echo $BOOKPIC3 ?>" style="float:left; margin-right:6px; height: 100px;">
+    <input type="hidden" id="book3" value="<?php echo $BOOKTITLE3 ?>">
+    <input type="hidden" id="book3price" value="<?php echo $BOOKPRICE3 ?>">
+	<strong><?php echo $BOOKTITLE3 ?></strong><p>
+	by <?php echo $BOOKAUTH3 ?> <p>
 	<p>
-	<input type="button" value="Learn More" id="book3button" onClick="$(this).DeetsBox(3)";>
+	<?php if($LATEST != 0){ ?>
+	<input type="button" value="Purchase" id="book3button" $(this).DeetsBox(3);">
+	<?php } else { ?>
+	<input type="button" value="Learn More" id="book3button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book3').value); $(this).DeetsBox(3)";>
+	<?php } ?>
 	</div>
-    
+   
 <!-- MIDTERM ADDITIONS - PHP SO THAT DISPLAY DEPENDS ON CART OR NOT -->	
 <?php 
 if($n > 4){ ?>
  <div id="four" style="padding:10px;">
-	<?php echo $BOOKID4; ?>
-	<img src="img/" style="float:left; margin-right:6px; height: 100px;">
+	<?php echo $BOOK4; ?>
+	<img src="img/<?php echo $BOOKPIC4 ?>" style="float:left; margin-right:6px; height: 100px;">
 <!-- ASSIGNMENT 2 ADDITIONS - CREATED hidden input WITH UNIQUE ID -->
-    <input type="hidden" id="book4" value="">
-	<strong></strong><p>
-	by <p>
+    <input type="hidden" id="book4" value="<?php echo $BOOKTITLE4 ?>">
+    <input type="hidden" id="book4price" value="<?php echo $BOOKPRICE4 ?>">
+	<strong><?php echo $BOOKTITLE4 ?></strong><p>
+	by <?php echo $BOOKAUTH3 ?> <p>
 	<p>
-	<input type="button" value="Learn More" id="book4button" onClick="$(this).DeetsBox(4)";>
+	<?php if($LATEST != 0){ ?>
+	<input type="button" value="Purchase" id="book4button" $(this).DeetsBox(4);">
+	<?php } else { ?>
+	<input type="button" value="Learn More" id="book4button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book4').value); $(this).DeetsBox(4)";>
+	<?php } ?>
 	</div>
 	<?php } else { ?>
 	<div id="four" style="padding:10px;"></div>
