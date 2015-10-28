@@ -382,7 +382,7 @@ function post(path, params, method) {
 	<?php echo $BOOKDESC1 ?>
 	<p>
 	<?php if($LATEST != 0){ ?>
-	<input type="button" value="Purchase" id="book1button" 
+	<input type="button" value="Purchase" id="book1button" onClick="ga('send', 'event', 'convert', 'purchase', document.getElementById('book1').value); $(this).DeetsBox(1);">
 	<?php } else { ?>
 	<input type="button" value="Learn More" id="book1button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book1').value); $(this).DeetsBox(1);">
 	<?php } ?>
@@ -399,7 +399,7 @@ function post(path, params, method) {
 		<?php echo $BOOKDESC2 ?>
 	<p>
 	<?php if($LATEST != 0){ ?>
-	<input type="button" value="Purchase" id="book2button" 
+	<input type="button" value="Purchase" id="book2button" id="book2button" onClick="ga('send', 'event', 'convert', 'purchase', document.getElementById('book2').value); $(this).DeetsBox(2);">
 	
 	<?php } else { ?>
 	<input type="button" value="Learn More" id="book2button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book2').value); $(this).DeetsBox(2)";>
@@ -417,7 +417,7 @@ function post(path, params, method) {
 	<p>
 
 	<?php if($LATEST != 0){ ?>
-	<input type="button" value="Purchase" id="book3button" 
+	<input type="button" value="Purchase" id="book3button" onClick="ga('send', 'event', 'convert', 'purchase', document.getElementById('book3').value); $(this).DeetsBox(3);">
 	<?php } else { ?>
 	<input type="button" value="Learn More" id="book3button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book3').value); $(this).DeetsBox(3)";>
 	<?php } ?>
@@ -438,7 +438,7 @@ if($n > 4){ ?>
 	<p>
 	
 	<?php if($LATEST != 0){ ?>
-	<input type="button" value="Purchase" id="book4button" 
+	<input type="button" value="Purchase" id="book4button" onClick="ga('send', 'event', 'convert', 'purchase', document.getElementById('book4').value); $(this).DeetsBox(4);">
 	<?php } else { ?>
 	<input type="button" value="Learn More" id="book4button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book4').value); $(this).DeetsBox(4)";>
 	<?php } ?>
