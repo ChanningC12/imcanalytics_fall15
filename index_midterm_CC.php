@@ -188,6 +188,7 @@ if (mysqli_connect_errno()) {
    $.fn.DeetsBox = function(bid) {
         if(bid == '1'){	
 	//MIDTERM ADDITIONS - NEW VARIABLES AND CONDITIONS
+	//Student Comment : Copy the book1 code and apply to book2, book3 and book4
 		var bookname = $( "#book1" ).val();
 		var bookprice = $( "#book1price" ).val();
 		$("#showbookdeets").html(bookname + "<p>" + bookprice); 
@@ -403,14 +404,11 @@ function post(path, params, method) {
         <?php if($LATEST != 0){ ?>
         <input type="button" value="Purchase" id="book2button" onClick="ga('send', 'event', 'convert', 'purchase', document.getElementById('book2').value); $(this).DeetsBox(2);">
         
-          <!-- Took me a long time to figure out why I didn't have "learn more" button under book 2 because I missed the code, and then I created the same GA event as book 1 -->
-        
 	<?php } else { ?>
 	<input type="button" value="Learn More" id="book2button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book2').value); $(this).DeetsBox(2)";>
 	<?php } ?>
         </div>
           
-   <!-- I didn't change the php code for BOOK2 first, so the 200 still remained, then I found I made a mistake -->	  
 	
  <div id="three" style="padding:10px;">
 	<?php echo $BOOK3; ?>
