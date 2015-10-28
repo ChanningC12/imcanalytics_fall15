@@ -187,7 +187,7 @@ if (mysqli_connect_errno()) {
    $.fn.DeetsBox = function(bid) {
         if(bid == '1'){	
 	//MIDTERM ADDITIONS - NEW VARIABLES AND CONDITIONS
-	//Student Comment: Make book2, book3, book4 dynamic
+	//Student Comment: Make book2, book3, book4 dynamic, same as book1
 		var bookname = $( "#book1" ).val();
 		var bookprice = $( "#book1price" ).val();
 		$("#showbookdeets").html(bookname + "<p>" + bookprice); 
@@ -222,14 +222,18 @@ if (mysqli_connect_errno()) {
 		var bookprice = $( "#book4price" ).val();	
 		$("#showbookdeets").html(bookname + "<p>" + bookprice); 
 		$("#bookshelf").val('4'); 
-		}
-		$('#bookdeets').popup('show');
-		 var fromcart = $( "#iscart" ).val();
+		var fromcart = $( "#iscart" ).val();
 		 if(fromcart != 0){
 		 
-		 $("#deetcta").text('Purchase'); }
+		 $("#deetcta").text('Purchase'); 
+		}
+		 $('#bookdeets').popup('show');
     };
 	
+
+
+
+
 
 
 </script>
@@ -319,10 +323,7 @@ function post(path, params, method) {
 </script>
 
 <!--GOOGLE ANALYTICS CODE WILL GO HERE -->
-
-
-
- </head>
+</head>
  
  
  <body  onload="checkCookie()">
@@ -371,7 +372,7 @@ function post(path, params, method) {
 	<?php echo $BOOKDESC1 ?>
 	<p>
 	<?php if($LATEST != 0){ ?>
-	<input type="button" value="Purchase" id="book1button" $(this).DeetsBox(1);">
+	<input type="button" value="Purchase" id="book1button" 
 	<?php } else { ?>
 	<input type="button" value="Learn More" id="book1button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book1').value); $(this).DeetsBox(1);">
 	<?php } ?>
@@ -385,9 +386,11 @@ function post(path, params, method) {
     <input type="hidden" id="book2price" value="<?php echo $BOOKPRICE2 ?>">
 	<strong><?php echo $BOOKTITLE2 ?></strong><p>
 	by <?php echo $BOOKAUTH2 ?> <p>
+		<?php echo $BOOKDESC2 ?>
 	<p>
 	<?php if($LATEST != 0){ ?>
-	<input type="button" value="Purchase" id="book2button" $(this).DeetsBox(2);">
+	<input type="button" value="Purchase" id="book2button" 
+	
 	<?php } else { ?>
 	<input type="button" value="Learn More" id="book2button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book2').value); $(this).DeetsBox(2)";>
 	<?php } ?>
@@ -400,9 +403,11 @@ function post(path, params, method) {
     <input type="hidden" id="book3price" value="<?php echo $BOOKPRICE3 ?>">
 	<strong><?php echo $BOOKTITLE3 ?></strong><p>
 	by <?php echo $BOOKAUTH3 ?> <p>
+	<?php echo $BOOKAUTH3 ?>
 	<p>
+
 	<?php if($LATEST != 0){ ?>
-	<input type="button" value="Purchase" id="book3button" $(this).DeetsBox(3);">
+	<input type="button" value="Purchase" id="book3button" 
 	<?php } else { ?>
 	<input type="button" value="Learn More" id="book3button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book3').value); $(this).DeetsBox(3)";>
 	<?php } ?>
@@ -418,10 +423,12 @@ if($n > 4){ ?>
     <input type="hidden" id="book4" value="<?php echo $BOOKTITLE4 ?>">
     <input type="hidden" id="book4price" value="<?php echo $BOOKPRICE4 ?>">
 	<strong><?php echo $BOOKTITLE4 ?></strong><p>
-	by <?php echo $BOOKAUTH3 ?> <p>
+	by <?php echo $BOOKAUTH4 ?> <p>
+	<?php echo $BOOKAUTH4 ?>
 	<p>
+	
 	<?php if($LATEST != 0){ ?>
-	<input type="button" value="Purchase" id="book4button" $(this).DeetsBox(4);">
+	<input type="button" value="Purchase" id="book4button" 
 	<?php } else { ?>
 	<input type="button" value="Learn More" id="book4button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book4').value); $(this).DeetsBox(4)";>
 	<?php } ?>
