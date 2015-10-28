@@ -29,7 +29,7 @@ if (mysqli_connect_errno()) {
 	//MIDTERM ADDITIONS - LOGIC TO SET BOOKS
 	      $search2 = mysqli_query($con,"SELECT * FROM `Bookdetails` WHERE CatID = '". $PREF ."'");
 		  if($LATEST != 0) {
-		   $n=2;
+                   
 		   $search3 = mysqli_query($con,"SELECT * FROM `Bookdetails` WHERE bid = '". $LATEST ."'");
 	       $BOOKID1=$LATEST;
 		   while($row = mysqli_fetch_array($search3)) {
@@ -187,7 +187,6 @@ if (mysqli_connect_errno()) {
    $.fn.DeetsBox = function(bid) {
         if(bid == '1'){	
 	//MIDTERM ADDITIONS - NEW VARIABLES AND CONDITIONS
-	//Student Comment: Make book2, book3, book4 dynamic
 		var bookname = $( "#book1" ).val();
 		var bookprice = $( "#book1price" ).val();
 		$("#showbookdeets").html(bookname + "<p>" + bookprice); 
@@ -198,36 +197,41 @@ if (mysqli_connect_errno()) {
 		 $("#deetcta").text('Purchase'); }
 		}
 		else if(bid == '2'){
-		var bookname = $( "#book2" ).val();
-		var bookprice = $( "#book2price" ).val();	
+                var bookname = $( "#book2" ).val();
+		var bookprice = $( "#book2price" ).val();
 		$("#showbookdeets").html(bookname + "<p>" + bookprice); 
 		$("#bookshelf").val('2'); 
-		 var fromcart = $( "#iscart" ).val();
+                var fromcart = $( "#iscart" ).val();
 		 if(fromcart != 0){
 		 
 		 $("#deetcta").text('Purchase'); }
+                
 		}
 			else if(bid == '3'){
-		var bookname = $( "#book3" ).val();
-		var bookprice = $( "#book3price" ).val();	
+                var bookname = $( "#book3" ).val();
+		var bookprice = $( "#book3price" ).val(); 
+                
 		$("#showbookdeets").html(bookname + "<p>" + bookprice); 
 		$("#bookshelf").val('3'); 
-		 var fromcart = $( "#iscart" ).val();
+                var fromcart = $( "#iscart" ).val();
 		 if(fromcart != 0){
 		 
 		 $("#deetcta").text('Purchase'); }
+                
 		}
 			else if(bid == '4'){
-		var bookname = $( "#book4" ).val();
-		var bookprice = $( "#book4price" ).val();	
+                var bookname = $( "#book4" ).val();
+		var bookprice = $( "#book4price" ).val(); 
+                
 		$("#showbookdeets").html(bookname + "<p>" + bookprice); 
 		$("#bookshelf").val('4'); 
-		}
-		$('#bookdeets').popup('show');
-		 var fromcart = $( "#iscart" ).val();
+                var fromcart = $( "#iscart" ).val();
 		 if(fromcart != 0){
 		 
 		 $("#deetcta").text('Purchase'); }
+             
+		}
+		$('#bookdeets').popup('show');
     };
 	
 
@@ -294,7 +298,7 @@ function drop_cookie(name) {
 
 <!--MIDTERM ADDITIONS - FUNCTION TO POST FROM JS -->
 function post(path, params, method) {
-    method = method || "post"; // Set method to post by default if not specified.
+    method = method || "post"; 
 
     var form = document.createElement("form");
     form.setAttribute("method", method);
@@ -318,9 +322,8 @@ function post(path, params, method) {
 
 </script>
 
-<!--GOOGLE ANALYTICS CODE WILL GO HERE -->
 
-
+</script>
 
  </head>
  
@@ -371,58 +374,63 @@ function post(path, params, method) {
 	<?php echo $BOOKDESC1 ?>
 	<p>
 	<?php if($LATEST != 0){ ?>
-	<input type="button" value="Purchase" id="book1button" $(this).DeetsBox(1);">
+	<input type="button" value="Purchase" id="book1button" 
 	<?php } else { ?>
 	<input type="button" value="Learn More" id="book1button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book1').value); $(this).DeetsBox(1);">
 	<?php } ?>
 	</div>
-
+	
 
  <div id="two" style="padding:10px;">
 	<?php echo $BOOK2; ?>
 	<img src="img/<?php echo $BOOKPIC2 ?>" style="float:left; margin-right:6px; height: 100px;">
     <input type="hidden" id="book2" value="<?php echo $BOOKTITLE2 ?>">
     <input type="hidden" id="book2price" value="<?php echo $BOOKPRICE2 ?>">
-	<strong><?php echo $BOOKTITLE2 ?></strong><p>
+        <strong><?php echo $BOOKTITLE2 ?></strong><p>
 	by <?php echo $BOOKAUTH2 ?> <p>
+        <?php echo $BOOKDESC2 ?>
 	<p>
-	<?php if($LATEST != 0){ ?>
-	<input type="button" value="Purchase" id="book2button" $(this).DeetsBox(2);">
+        <?php if($LATEST != 0){ ?>
+        <input type="button" value="Purchase" id="book2button" 
+          
+        
 	<?php } else { ?>
 	<input type="button" value="Learn More" id="book2button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book2').value); $(this).DeetsBox(2)";>
 	<?php } ?>
-	</div>
+        </div>
+          
 	
  <div id="three" style="padding:10px;">
 	<?php echo $BOOK3; ?>
 	<img src="img/<?php echo $BOOKPIC3 ?>" style="float:left; margin-right:6px; height: 100px;">
     <input type="hidden" id="book3" value="<?php echo $BOOKTITLE3 ?>">
     <input type="hidden" id="book3price" value="<?php echo $BOOKPRICE3 ?>">
+    
 	<strong><?php echo $BOOKTITLE3 ?></strong><p>
 	by <?php echo $BOOKAUTH3 ?> <p>
+        <?php echo $BOOKDESC3 ?>
 	<p>
-	<?php if($LATEST != 0){ ?>
-	<input type="button" value="Purchase" id="book3button" $(this).DeetsBox(3);">
-	<?php } else { ?>
+        <?php if($LATEST != 0){ ?>
+        <input type="button" value="Purchase" id="book3button" 
 	<input type="button" value="Learn More" id="book3button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book3').value); $(this).DeetsBox(3)";>
 	<?php } ?>
-	</div>
-   
+        </div>
+    
 <!-- MIDTERM ADDITIONS - PHP SO THAT DISPLAY DEPENDS ON CART OR NOT -->	
 <?php 
 if($n > 4){ ?>
  <div id="four" style="padding:10px;">
 	<?php echo $BOOK4; ?>
 	<img src="img/<?php echo $BOOKPIC4 ?>" style="float:left; margin-right:6px; height: 100px;">
-<!-- ASSIGNMENT 2 ADDITIONS - CREATED hidden input WITH UNIQUE ID -->
     <input type="hidden" id="book4" value="<?php echo $BOOKTITLE4 ?>">
     <input type="hidden" id="book4price" value="<?php echo $BOOKPRICE4 ?>">
+    
 	<strong><?php echo $BOOKTITLE4 ?></strong><p>
-	by <?php echo $BOOKAUTH3 ?> <p>
+	by <?php echo $BOOKAUTH4 ?> <p>
+        <?php echo $BOOKDESC4 ?>
 	<p>
-	<?php if($LATEST != 0){ ?>
-	<input type="button" value="Purchase" id="book4button" $(this).DeetsBox(4);">
-	<?php } else { ?>
+        <?php if($LATEST != 0){ ?>
+        <input type="button" value="Purchase" id="book4button" 
 	<input type="button" value="Learn More" id="book4button" onClick="ga('send', 'event', 'browse', 'learn_more_home', document.getElementById('book4').value); $(this).DeetsBox(4)";>
 	<?php } ?>
 	</div>
