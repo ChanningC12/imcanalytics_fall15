@@ -377,6 +377,7 @@ function post(path, params, method) {
 	<img src="img/<?php echo $BOOKPIC1 ?>" style="float:left; margin-right:6px; height: 100px;">
 	
 <!-- MIDTERM ADDITIONS - ADDED BOOKPRICE. MADE BOOK DYNAMIC -->
+<!--Student comment: At the beginning, learn more can't pop up, adjusted with onclick code and fixed the issue finally-->
     <input type="hidden" id="book1" value="<?php echo $BOOKTITLE1 ?>">
 	<input type="hidden" id="book1price" value="<?php echo $BOOKPRICE1 ?>">
 	
