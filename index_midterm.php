@@ -403,7 +403,7 @@ function post(path, params, method) {
     <input type="hidden" id="book3price" value="<?php echo $BOOKPRICE3 ?>">
 	<strong><?php echo $BOOKTITLE3 ?></strong><p>
 	by <?php echo $BOOKAUTH3 ?> <p>
-	<?php echo $BOOKAUTH3 ?>
+	<?php echo $BOOKDESC3 ?>
 	<p>
 
 	<?php if($LATEST != 0){ ?>
@@ -424,7 +424,7 @@ if($n > 4){ ?>
     <input type="hidden" id="book4price" value="<?php echo $BOOKPRICE4 ?>">
 	<strong><?php echo $BOOKTITLE4 ?></strong><p>
 	by <?php echo $BOOKAUTH4 ?> <p>
-	<?php echo $BOOKAUTH4 ?>
+	<?php echo $BOOKDESC4 ?>
 	<p>
 	
 	<?php if($LATEST != 0){ ?>
