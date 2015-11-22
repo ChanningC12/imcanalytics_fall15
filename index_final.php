@@ -262,17 +262,16 @@ function mixCookie() {
 
  	    var name = document.forms["form1"]["name"].value;
 
- 	    var PREF= document.getElementById('isthepref').value;;
-
-        bakeCookie("readuser", name, PREF, 365);
+        bakeCookie("readuser", name, 365);
 			
    }
-   
-function bakeCookie(cname, cvalue1, cvalue2, exdays) {
+//exdays did not get anything, has nothing to do with expires
+//365 exdays   
+function bakeCookie(cname, cvalue1, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+d.toGMTString();
-    document.cookie = cname + "=" + cvalue1 + "%-" + cvalue2 + ";" + expires;
+    document.cookie = cname + "=" + cvalue1 + ";" + expires;
 }
 
 //TWO FUNCTIONS TO GET THE COOKIE
@@ -381,10 +380,6 @@ function post(path, params, method) {
  
   <!--MIDTERM ADDITIONS - NEW HIDDEN FIELD - USED FOR BOOK1 CTA -->
  <input type="hidden" id="iscart" value="<?php echo $LATEST ?>">
-
-
-  <!--Final Code - NEW HIDDEN FIELD - USED FOR BOOK1 CTA -->
- <input type="hidden" id="isthepref" value="<?php echo $PREF ?>">
  
  
 
@@ -417,15 +412,6 @@ function post(path, params, method) {
 	<img src="img/<?php echo $BOOKPIC2 ?>" style="float:left; margin-right:6px; height: 100px;">
     <input type="hidden" id="book2" value="<?php echo $BOOKTITLE2 ?>">
     <input type="hidden" id="book2price" value="<?php echo $BOOKPRICE2 ?>">
-
-<?php
-	//if $SCORE > 49 and <75 then do this...
-	//	show the thing
-	//	else if score > 74 and your rules...
-	//		show option one
-	//			else show option two
-?>
-
         <strong><?php echo $BOOKTITLE2 ?></strong><p>
 	by <?php echo $BOOKAUTH2 ?> <p>
         <?php echo $BOOKDESC2 ?>
