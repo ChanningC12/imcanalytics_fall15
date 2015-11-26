@@ -430,7 +430,7 @@ function post(path, params, method) {
 	//	else if score > 74 and your rules...
 	//		show option one
 	//			else show option two
-}?>
+
 
         <strong><?php echo $BOOKTITLE2 ?></strong><p>
 	by <?php echo $BOOKAUTH2 ?> <p>
