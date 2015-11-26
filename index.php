@@ -418,13 +418,19 @@ function post(path, params, method) {
     <input type="hidden" id="book2" value="<?php echo $BOOKTITLE2 ?>">
     <input type="hidden" id="book2price" value="<?php echo $BOOKPRICE2 ?>">
 
-<?php
+<?php if($SCORE > 74){ ?>
+<input type="button" value="Free Shipping" id="book1button" onClick="ga('send', 'event', 'convert', 'free_shipping', document.getElementById('book1').value); $(this).DeetsBox(1);">
+<?php } else if($SCORE > 49 and $SCORE < 75) { ?>
+<input type="button" value="Half Price" id="book1button" onClick="ga('send', 'event', 'browse', 'half_price', document.getElementById('book1').value); $(this).DeetsBox(1);">
+<?php } ?>
+
+<?php 
 	//if $SCORE > 49 and <75 then do this...
 	//	show the thing
 	//	else if score > 74 and your rules...
 	//		show option one
 	//			else show option two
-?>
+}?>
 
         <strong><?php echo $BOOKTITLE2 ?></strong><p>
 	by <?php echo $BOOKAUTH2 ?> <p>
