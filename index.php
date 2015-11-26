@@ -424,15 +424,15 @@ function post(path, params, method) {
 <input type="button" value="Half Price" id="book1button" onClick="ga('send', 'event', 'browse', 'half_price', document.getElementById('book1').value); $(this).DeetsBox(1);">
 <?php } ?>
 
-<?php 
+<!--
 	//if $SCORE > 49 and <75 then do this...
 	//	show the thing
 	//	else if score > 74 and your rules...
 	//		show option one
 	//			else show option two
+-->
 
-
-        <strong><?php echo $BOOKTITLE2 ?></strong><p>
+	<strong><?php echo $BOOKTITLE2 ?></strong><p>
 	by <?php echo $BOOKAUTH2 ?> <p>
         <?php echo $BOOKDESC2 ?>
 	<p>
